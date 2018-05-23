@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+#timer{
+text-align: center;
+  font-size: 50px;
+  border:1px solid black;
+  font-family: 'Poiret One', cursive;
+}
+
+img{
+margin-left: 15%;
+  width: 70%;
+  border-radius: 50%;
+}
