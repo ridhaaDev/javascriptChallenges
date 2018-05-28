@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      p{
+        margin: 0;
+        font-size: 100px;
+        text-align: center;
+      }
+      div{
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        border:1px solid black;
+        animation-name: slideshow;
+        animation-duration: 15s;
+        animation-iteration-count: 1;
+      }
+      /* Just typing */
+      @keyframes slideshow {
+        0%{background:url("images/camping1.jpg");background-size: cover;}
+        10%{background:url("images/camping2.jpg");background-size: cover;}
+        20%{background:url("images/camping3.jpg");background-size: cover;}
+        30%{background:url("images/camping4.jpg");background-size: cover;}
+        40%{background:url("images/camping5.jpg");background-size: cover;}
+        50%{background:url("images/hiking1.jpg");background-size: cover;}
+        60%{background:url("images/hiking2.jpg");background-size: cover;}
+        70%{background:url("images/hiking3.jpg");background-size: cover;}
+        80%{background:url("images/hiking4.jpg");background-size: cover;}
+        90%{background:url("images/hiking5.jpg");background-size: cover;}
+        100%{background:url("images/climbing1.jpg");background-size: cover;}
+        110%{background:url("images/climbing2.jpg");background-size: cover;}
+        120%{background:url("images/climbing3.jpg");background-size: cover;}
+        130%{background:url("images/climbing4.jpg");background-size: cover;}
+        140%{background:url("images/climbing5.jpg");background-size: cover;}
+        150%{background:url("images/fishing1.jpg");background-size: cover;}
+      }
+    </style>
+  </head>
+  <body>
+    <p id="time"></p>
+    <div id="imageAnimation">
+
+    </div>
+
+
+    <script type="text/javascript">
+    myFunction();
+    var timeLeft=15;
+    var timeSelector=document.getElementById("time");
+    var animationSelector=document.getElementById("imageAnimation");
+
+    function myFunction() {
+      var timer=setInterval(function(){
+      // console.log(timeLeft);
+      timeSelector.innerHTML=timeLeft;
+
+
+    //   var sheet = window.document.styleSheets[0];
+    // sheet.insertRule("body{background-color:red;} div{animation-name:slideshow;animation-duration:10s;} @keyframes slideshow{0%{}}", sheet.cssRules.length);
+
+
+          // animationSelector.style.backgroundImage="url('images/camping1"+".jpg')";
+
+
+      timeLeft--;
+      if (timeLeft===-1) {
+        clearInterval(timer);
+        timeSelector.innerHTML="We're done here...";
+      }
+     }, 1000);
+}
+
+    </script>
+  </body>
+</html>

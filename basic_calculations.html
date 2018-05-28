@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+        input,button,p,h1{
+            text-align: center;
+            display: block;
+            width: 300px;
+            height: 50px;
+            font-size: 20px;
+            margin: 10px auto;
+            border-radius: 12px;
+            outline: none;
+        }
+        h1{
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Basic Calculations</h1>
+    <input type="text" name="" id="firstElement" value="12">&nbsp
+    <input type="text" name="" id="secondElement" value="3">&nbsp
+    <button type="button" name="button" onclick="addTheNumbers()">Add</button>
+    <button type="button" name="button" onclick="subtractTheNumbers()">Subtract</button>
+    <button type="button" name="button" onclick=" multiplyTheNumbers()">Multiply</button>
+    <button type="button" name="button" onclick="divideTheNumbers()">Divide</button>
+
+    <p id="add"></p>
+    <p id="subtract"></p>
+    <p id="multiply"></p>
+    <p id="divide"></p>
+
+    <script type="text/javascript">
+    // getting the first input
+    var firstInput=Number(document.getElementById("firstElement").value);
+    // getting the second input
+    var secondInput=Number(document.getElementById("secondElement").value);
+
+    // Functions that will be triggered by their constituent events, performing the operations on demand
+    function addTheNumbers(){
+        add(firstInput, secondInput);
+    }
+    function subtractTheNumbers(){
+        subtract(firstInput, secondInput);
+    }
+    function divideTheNumbers(){
+        divide(firstInput, secondInput);
+    }
+    function multiplyTheNumbers(){
+        multiply(firstInput, secondInput);
+    }
+
+
+
+    //add function with two parameters
+    function add(a, b){
+        //check for an integer
+        if (Number.isInteger(a / b)) {
+            //calculating
+            var answer = a + b;
+            //log the response in the console
+            var response="Adding "+a+" to "+b+" is equal to "+answer;
+            console.log(response);
+            //finds an HTML element with the id "add" and updates it.
+            document.getElementById("add").innerHTML = response;
+        }
+    }
+
+    function subtract(a, b){
+        //check for an integer
+        if (Number.isInteger(a / b)) {
+            //calculating
+            var answer = a - b;
+            //log the response in the console
+            var response="Subtracting "+b+" from "+a+" is equal to "+answer;
+            console.log(response);
+            //finds an HTML element with the id "add" and updates it.
+            document.getElementById("subtract").innerHTML = response;
+        }
+    }
+
+    function divide(a, b){
+        //check for an integer
+        if (Number.isInteger(a / b)) {
+            //calculating
+            var answer = a / b;
+            //log the response in the console
+            var response="Dividing "+a+" into "+b+" is equal to "+answer;
+            console.log(response);
+            //finds an HTML element with the id "add" and updates it.
+            document.getElementById("divide").innerHTML = response;
+        }
+    }
+
+
+    function multiply(a, b){
+        //check for an integer
+        if (Number.isInteger(a / b)) {
+            //calculating
+            var answer = a * b;
+            //log the response in the console
+            var response="Multiplying "+a+" by "+b+" is equal to "+answer;
+            console.log(response);
+            //finds an HTML element with the id "add" and updates it.
+            document.getElementById("multiply").innerHTML = response;
+        }
+    }
+    </script>
+
+</body>
+</html>
