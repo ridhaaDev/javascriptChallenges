@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Golf Challenge</title>
+    <style media="screen">
+        input,label,button, p{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2%;
+            font-size: 3em;
+            padding: 20px 60px;
+        }
+        input{
+          outline: none;
+          border:none;
+          border-bottom: 2px solid red;
+        }
+        button{
+          background-color: red;
+          border: 1px solid black;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" value="" id="strokes" placeholder="Enter number of strokes">
+
+    <input type="text" name="" value="" id="par" placeholder="Enter par score">
+
+    <button type="button" name="button" onclick="evalGolfScore()">Evaluate</button>
+    <p id="output"></p>
+
+    <script type="text/javascript">
+
+    function evalGolfScore(){
+      var strokes=Number(document.getElementById("strokes").value);
+      var par=Number(document.getElementById("par").value);
+      var output=document.getElementById("output");
+
+      output.innerHTML=golfScore(par, strokes);
+    }
+
+    function golfScore(par, strokes) {
+        var output=document.getElementById("output");
+        if (strokes===1) {
+            return "Hole in one";
+        }
+        else if (strokes<=(par-2)) {
+            return "Eagle";
+        }
+        else if (strokes===(par-1)) {
+            return "Birdie";
+        }
+        else if (strokes===par) {
+            return "Par";
+        }
+        else if (strokes===(par+1)) {
+            return "Bogey";
+        }
+        else if (strokes===(par+2)) {
+            return "Double Bogey";
+        }
+        else if (strokes>=par+3) {
+            return "Go home";
+        }
+    }
+
+    // Change these values to test
+    console.log("Passing the function 5 and 7 produces"+golfScore(5,7));
+
+    </script>
+</body>
+</html>

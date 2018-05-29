@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" name="" value="" id="input">
+
+    <button type="button" name="button" onclick="deriveType()">Evaluate</button>
+    <p id="output"></p>
+
+    <script type="text/javascript">
+    // types to test for
+    // Array
+    // Object
+    // String
+    // Number
+    // Boolean
+    // Null
+    // Undefined
+    // Date
+    function deriveType(){
+        var input=document.getElementById("input").value;
+        var output=document.getElementById("output");
+
+        if(input===""){
+            output.innerHTML="undefined";
+        }
+        else if(Number(input)){
+            output.innerHTML="number";
+        }
+        else if (input==="null") {
+            output.innerHTML="null";
+        }
+        else if (input=="true" || input=="false") {
+            output.innerHTML="boolean";
+        }
+        else if (String(input)) {
+            output.innerHTML="string";
+        }
+
+
+
+
+
+    }
+    </script>
+</body>
+</html>
