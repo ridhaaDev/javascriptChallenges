@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Troll Threat Challenge</title>
+    <style media="screen">
+    *{
+        margin: 0 auto;
+        font-size: 20px;
+          text-align: center;
+    }
+      textarea{
+        width: 80%;
+        border: 1px solid black;
+        display: block;
+        margin-bottom: 20px;
+      }
+      p{
+
+        border: 1px solid black;
+        height: 30px;
+      }
+      button{
+        padding: 2%;
+        width: 40%;
+          margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="name" rows="8" cols="80" placeholder="Comments? Add them here..." id="input"></textarea>
+
+    <button type="button" name="button" onclick="removeVowels()">Submit</button>
+
+<p id="output"></p>
+
+    <script type="text/javascript">
+    function removeVowels(){
+    var input=document.getElementById("input").value;
+    var output=document.getElementById("output");
+    output.innerHTML=vowels(input);
+
+    }
+    function vowels(input){
+
+
+
+      var vowels=['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+      // var vowels=["a","e","i",'o',"u"];
+      var word="";
+      for (var i = 0; i < input.length; i++) {
+
+
+        for (var j = 0; j < vowels.length; j++) {
+          if ((input[i]===vowels[j] || input[i]==vowels[j].toUpperCase() || input[i]==" ")) {
+            word+=input[i];
+         }
+        }
+
+      }
+      return word;
+
+
+
+}
+  removeVowels("This website is for losers LOL!");
+    </script>
+
+  </body>
+</html>
