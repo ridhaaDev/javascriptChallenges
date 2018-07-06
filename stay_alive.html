@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <style media="screen">
   p{
     margin: 0;
@@ -25,6 +26,11 @@
 
   </div>
 
+  <button type="button" name="button" onclick="backwards()"><</button>
+  <button type="button" name="button" onclick="middle()">0</button>
+  <button type="button" name="button" onclick="forwards()"><i class="fas fa-forward"></i></button>
+
+
 
   <script type="text/javascript">
   myFunction();
@@ -33,18 +39,43 @@
   var timeSelector=document.getElementById("time");
   var animationSelector=document.getElementById("imageAnimation");
 
+
+
+  function backwards(){
+// animationSelector.style.opacity='1';
+animationSelector.style.width="120%";
+    timeLeft=15;
+    animationSelector.style.width="100%";
+
+  }
+  function middle(){
+    timeLeft=10;
+    // animationSelector.style.opacity='0.5';
+  }
+  function forwards(){
+    timeLeft=5;
+      // animationSelector.style.opacity='1';
+  }
+
+
+
+
   function myFunction() {
     var timer=setInterval(function(){
       // console.log(timeLeft);
       timeSelector.innerHTML=timeLeft;
       console.log(timeLeft);
-      animationSelector.style.background="url('images/camping"+animationImageCount+".jpg')";
+      animationSelector.style.background="url('images/camping"+timeLeft+".jpg')";
+      // animationSelector.styleanimation-timing-function: linear;
+      // animationSelector.style.animation="1s ease-in-out"
         animationSelector.style.backgroundSize="cover";
+
 
 
       animationImageCount++;
 
-      if (timeLeft===0) {
+      if (timeLeft<=0) {
+        // timeLeft+=15;
         clearInterval(timer);
         timeSelector.innerHTML="We're done here...";
       }

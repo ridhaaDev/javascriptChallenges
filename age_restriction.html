@@ -45,7 +45,7 @@ input, button, .output{
     function testAge(){
 
       var ageField=document.getElementById("age");
-      var age=ageField.value;
+      var age=Number(ageField.value);
       var outputDiv=document.getElementById("output");
 
       if (Number(age)===0) {
@@ -68,7 +68,7 @@ input, button, .output{
         outputDiv.innerHTML="You are dead";
       }
     }
-
+}
     </script>
 
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Character count</title>
+    <style media="screen">
+      header{
+        background-color: blue;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        color: white;
+        text-align: center;
+      }
+
+      .frame{
+        border: 3px solid blue;
+      }
+      .frame textarea{
+        width: 99%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <p>Character-count:<span id="characterCount">0</span></p>
+      <p>Words:<span id="wordCount">0</span></p>
+      <p>Sentences:<span id="sentenceCount">0</span></p>
+      <p>Paragraphs:<span id="paragraphCount">0</span></p>
+      <p>Whitespace:<span>0</span></p>
+    </header>
+
+    <div class="frame">
+      <textarea name="name" rows="8" cols="80" id="text"></textarea>
+    </div>
+
+    <script type="text/javascript">
+    var characterCount=0;
+    var wordCount=0;
+    var sentenceCount=0;
+    var paragraphCount=0;
+
+    var characterCountSelector=document.getElementById("characterCount");
+    var wordCountSelector=document.getElementById("wordCount");
+    var sentenceCountSelector=document.getElementById("sentenceCount");
+    var paragraphCountSelector=document.getElementById("paragraphCount");
+    var paragraphCountSelector=document.getElementById("whiteSpaceCount");
+
+    document.getElementById("text").addEventListener("keydown", function(key){
+      if (key.keyCode == 32) {
+        console.log("Its a space");
+        wordCount++;
+      }
+
+      if (key.keyCode == 190) {
+        console.log("Its a full stop");
+        sentenceCount++;
+      }
+
+      if (key.keyCode == 13) {
+        console.log("Its a new line");
+        paragraphCount++;
+      }
+
+
+      console.log(key);
+
+
+      if (key.keyCode == 8) {
+        characterCount--;
+      }else{
+        characterCount++;
+      }
+
+
+      characterCountSelector.innerHTML=characterCount;
+      wordCountSelector.innerHTML=wordCount;
+      sentenceCountSelector.innerHTML=sentenceCount;
+      paragraphCountSelector.innerHTML=paragraphCount;
+    });
+    </script>
+
+  </body>
+</html>

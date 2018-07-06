@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Alphabet soup</title>
+</head>
+<body>
+
+  <input type="text" name="" value="" id="input">
+  <button type="button" name="button" onclick="rearrangeString()">Re-arrange</button>
+
+  <p id="output"></p>
+
+  <script type="text/javascript">
+
+    function sortString(input){
+
+
+      var word="";
+      for (var i = 0; i < input.length; i++) {
+          var temp="z";
+          console.log(input[i]);
+        if (input[i]<temp) {
+          temp=input[i];
+          word+=temp;
+
+
+        }
+      }
+      console.log(word);
+    }
+
+    sortString("My Name is Ridhaa");
+
+  </script>
+
+
+</body>
+</html>

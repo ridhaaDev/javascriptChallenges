@@ -42,17 +42,14 @@
 
     }
     function vowels(input){
-
-
-
       var vowels=['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
-      // var vowels=["a","e","i",'o',"u"];
+       // var vowels=["a","e","i",'o',"u"];
       var word="";
       for (var i = 0; i < input.length; i++) {
 
 
         for (var j = 0; j < vowels.length; j++) {
-          if ((input[i]===vowels[j] || input[i]==vowels[j].toUpperCase() || input[i]==" ")) {
+          if ((input[i]==vowels[j] || input[i]==vowels[j].toUpperCase() || input[i]==" ")) {
             word+=input[i];
          }
         }
@@ -63,7 +60,7 @@
 
 
 }
-  removeVowels("This website is for losers LOL!");
+console.log(vowels("This website is for losers LOL!"));
     </script>
 
   </body>
