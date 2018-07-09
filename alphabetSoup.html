@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <input type="text" id="input">
+        <button  onclick="generateSortedWord()">Sort word</button>
+        <p id="output"></p>
+        <script>
+            //e.g Ridhaa ==> aadhir
+            function wordScramble(word) {
+                //Convert the word given to an array of characters
+                var wordArray = [];
+                for (var i = 0; i < word.length; i++) {
+                    wordArray[i] = word[i].toLowerCase();
+                }
+
+
+                //Sort the converted array using bubble sort algorithm
+                var x = wordArray.length - 1;
+                var flag = false;
+                var temp;
+                while (x > 0 && flag == false)
+                {
+                    flag = true;
+                    for (var j = 0; j < x; j++)
+                    {   
+                //If current value is a greater ASCII value, swap them
+                        if (wordArray[j] > wordArray[j + 1])
+                        {
+                            flag = false;
+                            temp = wordArray[j];
+                            wordArray[j] = wordArray[j + 1];
+                            wordArray[j + 1] = temp;
+                        }
+                    }
+                /*   Decrement x so that condition in while becomes true after 
+                    every character has been seen to */
+                    x--;
+                }
+
+
+                //Convert the sorted Array back to a String
+                var sortedWord = "";
+                for (var i = 0; i < wordArray.length; i++) {
+                    sortedWord += wordArray[i];
+                }
+
+                return sortedWord;
+
+            }
+
+//            console.log(wordScramble("ridhaa"));
+function generateSortedWord(){
+     var input = document.getElementById("input").value;
+    var output = document.getElementById("output");
+    output.innerHTML =wordScramble(input);
+}
+   
+// console.log(wordScramble(input));
+
+        </script>
+    </body>
+</html>
