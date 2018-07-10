@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dance for your money challenge</title>
+    <style media="screen">
+      body{
+        background-color: lightblue;
+        padding: 100px;
+        /* text-align: center; */
+      }
+      input,button{
+        font-size: 25px;
+        padding: 5px;
+        margin: 20px;
+        outline: none;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      ol{
+  font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="input" placeholder="Enter your pin here...">
+    <button type="button" name="button" id="process" onclick="processPin()">Submit</button>
+    <ol id="output">
+
+    </ol>
+
+    <script type="text/javascript">
+    var danceMoves = ["Nae-nae","Hit the quan","Moonwalk","Gwarra-gwarra","Hit them Folks","Shoot","Robot","Macarena","Twerk","Jazz"];
+
+    function processPin(){
+      var input = document.getElementById("input").value;
+      var output = document.getElementById("output");
+      output.innerHTML="";
+
+
+
+
+
+      if(input.length == 4){
+        // alert("fdsfsfds");
+
+        for (var i = 0; i < 4; i++) {
+
+          output.innerHTML +="<li>"+danceMoves[input[i]]+"</li>";
+        }
+
+      }
+      else{
+        alert("Please enter four digits");
+      }
+    }
+
+    </script>
+
+  </body>
+</html>
